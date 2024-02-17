@@ -1,3 +1,5 @@
+package Jobsheet_1;
+
 import java.util.Scanner;
 
 public class nilaiAkhir{

@@ -15,6 +15,12 @@ public class bukuMain {
         buku1.gantiHarga(60000);
         buku1.tampilInformasi();
 
+        buku22 buku2 = new buku22("Self Reward","Maheera Ayesha",160,29,59000);
+        buku2.terjual(11);
+        buku2.tampilInformasi();
+
+        buku22 bukuRaul = new buku22("Si Belalang","Raudhil",110,5,2000000);
+
 
 
     }

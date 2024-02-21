@@ -14,7 +14,11 @@ public class buku22 {
         }
 
         void terjual(int jml){
-            stok -= jml;
+            if(stok > 0){
+                stok -= jml;
+            } else{
+                System.out.println("Stock tidak tersedia.");
+            }
         }
 
         void restock(int jml){
@@ -24,6 +28,17 @@ public class buku22 {
         void gantiHarga(int hrg){
             harga = hrg;
         }
-    
+        
+        public buku22(){
+
+        }
+
+        public buku22(String jud, String pg, int hal, int stok, int har){
+            judul = jud;
+            pengarang = pg;
+            halaman = hal;
+            this.stok = stok;
+            harga = har;
+        }
     
 }

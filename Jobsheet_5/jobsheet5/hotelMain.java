@@ -1,4 +1,4 @@
-package Jobsheet_5.jobsheet6;
+package Jobsheet_5.jobsheet5;
 
 import java.util.Scanner;
 

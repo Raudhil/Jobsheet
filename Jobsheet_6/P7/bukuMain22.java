@@ -15,7 +15,7 @@ public class bukuMain22 {
         for (int i = 0; i < jumBuku; i++) {
             System.out.println("--------------");
             System.out.print("Kode Buku \t: ");
-            int kodeBuku = sc.nextInt();
+            String kodeBuku = sc.next();
             System.out.print("Judul buku \t: ");
             String judulBuku = sc2.nextLine();
             System.out.print("Tahun Terbit \t: ");
@@ -30,6 +30,8 @@ public class bukuMain22 {
             
         }
 
+        data.sort();
+
         System.out.println("-------------------------------------------------");
         System.out.println("Data keseluruhan Buku: ");
         data.tampil();
@@ -39,24 +41,52 @@ public class bukuMain22 {
         System.out.println("Pencarian Data: ");
         System.out.println("Masukkan kode buku yang dicari: ");
         System.out.print("Kode Buku: ");
-        int cari = sc.nextInt();
-        System.out.println("Menggunakan sequential Search");
-        int posisi = data.findSeqSearch(cari);
-        data.tampilPosisi(cari, posisi);
-        data.tampilData(cari, posisi);
-        System.out.println("================================");
-        buku22 dataBuku = data.findBuku(cari);
+        String cari = sc.next();
+
+        // System.out.println("Menggunakan sequential Search");
+        // int posisi = data.findSeqSearch(Integer.parseInt(cari));
+        // data.tampilPosisi(cari, posisi);
+        // data.tampilData(cari, posisi);
+        // System.out.println("================================");
+        // buku22 dataBuku = data.findBuku(cari);
         // if (dataBuku == null) {
         //     System.out.println("Kode Buku Tidak Tersedia");
         // } else{
         //     dataBuku.tampilDataBuku();
         // }
 
+        // System.out.println();
+        // System.out.println("================================");
+        // System.out.println("Menggunakan binary Search");
+        // posisi = data.findBinarySearch(Integer.parseInt(cari), 0, jumBuku - 1);
+        // data.tampilPosisi(cari, posisi);
+        // data.tampilData(cari, posisi);
+
+        System.out.println("Menggunakan sequential Search");
+        int posisi = data.findJudulSeq(cari);
+        if (posisi == -1) {
+            System.out.println("Data tidak ditemukan");
+        } else if(posisi == -2){
+            System.out.println("Data duplikat");
+        } else{
+            data.tampilPosisi(cari, posisi);
+            data.tampilData(cari, posisi);
+        }
+        System.out.println("================================");
+        
         System.out.println();
+
         System.out.println("================================");
         System.out.println("Menggunakan binary Search");
-        posisi = data.findBinarySearch(cari, 0, jumBuku - 1);
-        data.tampilPosisi(cari, posisi);
-        data.tampilData(cari, posisi);
+        posisi = data.findJudulBinarySearch(cari, 0, jumBuku - 1);
+        if (posisi == -1) {
+            System.out.println("Data tidak ditemukan");
+        } else if(posisi == -2){
+            System.out.println("Data duplikat");
+        } else{
+            data.tampilPosisi(cari, posisi);
+            data.tampilData(cari, posisi);
+        }
     }
 }
+
